@@ -23,7 +23,7 @@ let string = `/*
     
     background: linear-gradient(90deg, rgba(255,255,255,1) 50%,  rgba(0,0,0,1) 50%);
 }
-/*加上灵珠和魔丸*/
+/*加上中间的小珠子*/
 #div1::before{
     width:100px;
     height:100px;
@@ -49,26 +49,26 @@ let string = `/*
 `;
 let n = 0;
 // string = string.replace(/\n/g, " <br/> ");
-let string2 = '';
+let string2 = "";
 let step = () => {
-    setTimeout(() => {
-        //判断是否有回车，有则加上br，没有则不加
-        if (string[n] === '\n') {
-            string2 += '<br>';
-        } else if (string[n] === ' ') {
-            string2 += '&nbsp';
-        } else {
-            string2 += string[n];
-        }
+  setTimeout(() => {
+    //判断是否有回车，有则加上br，没有则不加
+    if (string[n] === "\n") {
+      string2 += "<br>";
+    } else if (string[n] === " ") {
+      string2 += "&nbsp";
+    } else {
+      string2 += string[n];
+    }
 
-        html.innerHTML = string2;
-        style.innerHTML = string.substring(0, n);
-        window.scrollTo(0, 99999);
-        html.scrollTo(0, 99999);
-        if (n < string.length - 1) {
-            n = n + 1;
-            step();
-        }
-    }, 10)
-}
+    html.innerHTML = string2;
+    style.innerHTML = string.substring(0, n);
+    window.scrollTo(0, 99999);
+    html.scrollTo(0, 99999);
+    if (n < string.length - 1) {
+      n = n + 1;
+      step();
+    }
+  }, 10);
+};
 step();

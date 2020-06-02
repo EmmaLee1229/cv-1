@@ -120,18 +120,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 var html = document.querySelector("#html");
 var style = document.querySelector("#style");
-var string = "/*\n\u4F60\u597D\uFF0C \u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA\n\u63A5\u4E0B\u6765\u6211\u8981\u5F00\u59CB\u5C55\u793A\u4E86\n\u9996\u5148\u6211\u5148\u51C6\u5907\u4E00\u4E2Adiv*/\n#div1 {\n    border:1px solid red;\n    width:200px;\n    height:200px;\n}\n/*\u63A5\u4E0B\u6765\u6211\u8981\u628Adiv\u53D8\u6210\u4E00\u4E2A\u5706\u5708\n\u89C1\u8BC1\u5947\u8FF9\u7684\u65F6\u523B*/\n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border:none;\n}\n/*\u516B\u5366\u662F\u7531\u9634\u9633\u8C03\u548C\u800C\u6210\u7684\n\u4E00\u9ED1\u4E00\u767D\n*/\n#div1 {\n    \n    background: linear-gradient(90deg, rgba(255,255,255,1) 50%,  rgba(0,0,0,1) 50%);\n}\n/*\u52A0\u4E0A\u7075\u73E0\u548C\u9B54\u4E38*/\n#div1::before{\n    width:100px;\n    height:100px;\n    top:0;\n    left:50%;\n    transform:translateX(-50%);\n    background:#000;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%);\n\n}\n#div1::after{\n    width:100px;\n    height:100px;\n    bottom:0;\n    left:50%;\n    transform:translateX(-50%);\n    background:#fff;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);\n\n}\n";
+var string = "/*\n\u4F60\u597D\uFF0C \u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA\n\u63A5\u4E0B\u6765\u6211\u8981\u5F00\u59CB\u5C55\u793A\u4E86\n\u9996\u5148\u6211\u5148\u51C6\u5907\u4E00\u4E2Adiv*/\n#div1 {\n    border:1px solid red;\n    width:200px;\n    height:200px;\n}\n/*\u63A5\u4E0B\u6765\u6211\u8981\u628Adiv\u53D8\u6210\u4E00\u4E2A\u5706\u5708\n\u89C1\u8BC1\u5947\u8FF9\u7684\u65F6\u523B*/\n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border:none;\n}\n/*\u516B\u5366\u662F\u7531\u9634\u9633\u8C03\u548C\u800C\u6210\u7684\n\u4E00\u9ED1\u4E00\u767D\n*/\n#div1 {\n    \n    background: linear-gradient(90deg, rgba(255,255,255,1) 50%,  rgba(0,0,0,1) 50%);\n}\n/*\u52A0\u4E0A\u4E2D\u95F4\u7684\u5C0F\u73E0\u5B50*/\n#div1::before{\n    width:100px;\n    height:100px;\n    top:0;\n    left:50%;\n    transform:translateX(-50%);\n    background:#000;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%);\n\n}\n#div1::after{\n    width:100px;\n    height:100px;\n    bottom:0;\n    left:50%;\n    transform:translateX(-50%);\n    background:#fff;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);\n\n}\n";
 var n = 0; // string = string.replace(/\n/g, " <br/> ");
 
-var string2 = '';
+var string2 = "";
 
 var step = function step() {
   setTimeout(function () {
     //判断是否有回车，有则加上br，没有则不加
-    if (string[n] === '\n') {
-      string2 += '<br>';
-    } else if (string[n] === ' ') {
-      string2 += '&nbsp';
+    if (string[n] === "\n") {
+      string2 += "<br>";
+    } else if (string[n] === " ") {
+      string2 += "&nbsp";
     } else {
       string2 += string[n];
     }
